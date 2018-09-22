@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<!--    Создать опрос с тремя вопросами: 'Сколько лун у планеты Земля?', 1], ['Сколько лун у планеты Сатурн?', 31], ['Сколько лун у планеты Венера?', 0-->
+   <script>
+       var score = 0;
+       function AskQuestion(question)
+       {
+           var answer = prompt(question[0], '');
+           if (answer == question[1]) {
+               alert('Верно!');
+               score ++; 
+           }
+           else {
+               alert('Неверно! Правильный ответ: '+question[1]);
+           }
+       }
+    var questions = [['Сколько лун у планеты Земля?', 1], ['Сколько лун у планеты Сатурн?', 31], ['Сколько лун у планеты Венера?', 0]];
+    for (var i=0; i<questions.length; i++)
+        {
+            AskQuestion(questions[i]);
+        }
+       var message = 'Вы ответили правильно на '+score+' вопросов из 3';
+       document.write(message);
+    </script>
+    
+</body>
+</html>
