@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script src = '../_js/jquery.min.js'></script>
+    <meta charset="UTF-8">
+    <title>Список дел</title>
+    <script>
+$(document).ready(function() {
+	$('form').submit(function(evt){
+		evt.preventDefault();
+	}); // конец submit
+	$('#button').click(function() {
+        console.log();
+		$('.main').append()('<input name="button" value="Добавить задание">');
+		
+	})// конец click
+
+});
+    </script>
+</head>
+<body>
+    	<div class="content">
+		<div class="main">
+			<form action="#" method="get">
+		<p><input name="textfield" type="text" id="textfield"> <input name="button" type="button" id="button" value="Добавить задание"></p>
+		</form>
+		<h1>Список дел</h1>
+		<ul id="tasklist">
+
+		</ul>
+		</div>
+	</div>
+</body>
+</html>
