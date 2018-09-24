@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weekend list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
+    <script src="../_js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function DoTask(p_Button, p_textfield, p_month)
+            {
+                $(p_Button).click(function() {
+               var $field = $(p_textfield);
+               var fieldVal = $field.val();
+               if (fieldVal) {
+                   $(p_month).append('<li>' + fieldVal + '</li>');
+                   $field.val('');
+                   $field.focus();
+               }
+           })//click
+                $(p_month).on('click', 'li', function() {
+                    $(this).css({
+                        'text-decoration' : 'line-through', 
+                        'font-weight' : 'bold',
+                        'color' : 'lightgrey'
+                    }); //css
+                }); //on
+            } //DoTask
+            DoTask('#buttonMn', '#textfieldMn', '#monday');
+            DoTask('#buttonTu', '#textfieldTu', '#tuesday');
+            DoTask('#buttonWd', '#textfieldWd', '#wednesday');
+            DoTask('#buttonTh', '#textfieldTh', '#thursday');
+            DoTask('#buttonFr', '#textfieldFr', '#friday');
+            DoTask('#buttonSt', '#textfieldSt', '#saturday');
+            DoTask('#buttonSn', '#textfieldSn', '#sunday');
+        }); //ready
+    </script>
+    <style>
+        .content {
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+    </style>
+</head>
+<body>
+   <div class = "uk-text-lead uk-position-top-center">Расписание на неделю</div>
+    <div class="content uk-position-center">
+        
+        <div class="main uk-grid">
+            <div class = "uk-card">
+              
+                <div class="uk-card-title">Понедельник</div>
+                <div class="uk-card-body">
+                   
+                    <p><input name="textfield" type="text" id="textfieldMn"> <input name="button" type="button" id="buttonMn" value="+"></p>
+                    <ul class="uk-list" id="monday">
+                    </ul>
+                </div>
+            </div>
+            
+            <div class = "uk-card">
+                <div class="uk-card-title">Вторник</div>
+                <div class="uk-card-body">
+                    <p><input name="textfield" type="text" id="textfieldTu"> <input name="button" type="button" id="buttonTu" value="+"></p>
+                    <ul class="uk-list" id="tuesday">
+                    </ul>
+                </div>
+            </div>
+            
+            <div class = "uk-card">
+                <div class="uk-card-title">Среда</div>
+                <div class="uk-card-body">
+            <p><input name="textfield" type="text" id="textfieldWd"> <input name="button" type="button" id="buttonWd" value="+"></p>
+            <ul class="uk-list" id="wednesday">
+            </ul>
+            </div>
+            </div>
+            <div class = "uk-card">
+                <div class="uk-card-title">Четверг</div>
+                <div class="uk-card-body">
+            <p><input name="textfield" type="text" id="textfieldTh"> <input name="button" type="button" id="buttonTh" value="+"></p>
+            <ul class="uk-list" id="thursday">
+                
+            </ul>
+            </div>
+            </div>
+            <div class = "uk-card">
+                <div class="uk-card-title">Пятница</div>
+                <div class="uk-card-body">
+            <p><input name="textfield" type="text" id="textfieldFr"> <input name="button" type="button" id="buttonFr" value="+"></p>
+            <ul class="uk-list"  id="friday">
+                
+            </ul>
+            </div>
+            </div>
+            <div class = "uk-card">
+                <div class="uk-card-title">Суббота</div>
+                <div class="uk-card-body">
+            <p><input name="textfield" type="text" id="textfieldSt"> <input name="button" type="button" id="buttonSt" value="+"></p>
+            <ul class="uk-list" id="saturday">
+            </ul>
+            </div>
+            </div>
+            <div class = "uk-card">
+                <div class="uk-card-title">Воскресенье</div>
+                <div class="uk-card-body">
+            <p><input name="textfield" type="text" id="textfieldSn"> <input name="button" type="button" id="buttonSn" value="+"></p>
+            <ul class="uk-list"  id="sunday">   
+            </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
